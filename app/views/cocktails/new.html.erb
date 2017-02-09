@@ -1,3 +1,5 @@
 <h1>Add your cocktail:</h1>
 
-<%= render 'form' %>
+<%= render 'form', cocktail: @cocktail %>
+
+<%= link_to "Back to cocktails", cocktails_path, class: 'btn btn-danger' %>

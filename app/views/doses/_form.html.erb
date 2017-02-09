@@ -1,0 +1,5 @@
+<%= simple_form_for([dose, ingredient]) do |form| %>
+	<%= form.input :ingredient, collection: ingredients %>
+	<%= form.input :description %>
+  <%= form.button :submit %>
+<% end %>
