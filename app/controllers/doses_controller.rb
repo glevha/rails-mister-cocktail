@@ -1,10 +1,10 @@
 class DosesController < ApplicationController
-	before_action :set_dose, only: :new
-	before_action :set_cocktail, only: :create
-	before_action :set_ingredient, only: :create
+	before_action :set_cocktail, only: [:new, :create]
+	before_action :set_ingredient, only: :new
 
 	def new
 		@dose = Dose.new
+		@ingredients = Ingredient.all
 	end
 
 	def create
@@ -20,10 +20,6 @@ class DosesController < ApplicationController
 	end
 
 	private
-
-	def set_dose
-		@dose = Dose.find(params[:id])
-	end
 
 	def set_cocktail
 		@cocktail = Cocktail.find(params[:cocktail_id])
