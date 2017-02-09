@@ -1,0 +1,17 @@
+.btn-medium-pink {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+
+  &:hover {
+  	background-color: #FA94F2;
+  	opacity: 1;
+  	text-decoration: none;
+  	color: white;
+  	border-color: #FA94F2;
+  }
+}

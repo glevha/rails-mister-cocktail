@@ -1,5 +1,7 @@
 <%= simple_form_for([cocktail, dose]) do |form| %>
+	<%= form.error_notification %>
+
 	<%= form.association :ingredient, collection: Ingredient.order(:name), prompt: "Choose an ingredient" %>
 	<%= form.input :description %>
-  <%= form.button :submit %>
+  <%= form.button :submit, value: "Add ingredient", class: "btn-medium-pink" %>
 <% end %>

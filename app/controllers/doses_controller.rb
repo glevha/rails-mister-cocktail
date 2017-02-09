@@ -35,7 +35,7 @@ class DosesController < ApplicationController
 	end
 
 	def set_ingredient
-		@ingredient = Ingredient.find(params[:dose][:ingredient_id])
+		params[:dose][:ingredient_id] == "" ? nil : @ingredient = Ingredient.find(params[:dose][:ingredient_id])
 	end
 
 	def dose_params

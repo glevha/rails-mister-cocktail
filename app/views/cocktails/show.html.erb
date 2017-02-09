@@ -1,14 +1,17 @@
-<h1><%= @cocktail.name %>:</h1>
+<h1 class="text-center"><%= @cocktail.name %>:</h1>
 <hr>
-<ul><% @cocktail.doses.each do |dose| %>
-	<li>
-		<strong><%= dose.ingredient.name %>:</strong> <%= dose.description %>
-		<%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?'} %>
-	</li>
-<% end %>
-</ul>
-
-<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "Back to cocktails", cocktails_path %>
-
-<%= render '/doses/form', cocktail: @cocktail, dose: @dose  %>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-2">
+			<ul><% @cocktail.doses.each do |dose| %>
+				<li>
+					<strong><%= dose.ingredient.name %>: </strong>   <%= dose.description %>   
+					<%= link_to "delete ingredient", cocktail_dose_path(@cocktail, dose), method: :delete, class: "pinky", data: { confirm: 'Are you sure?'} %>
+				</li>
+				<% end %>
+			</ul>
+			<br>
+			<%= render '/doses/form', cocktail: @cocktail, dose: @dose  %>		
+		</div>
+	</div>
+</div>
